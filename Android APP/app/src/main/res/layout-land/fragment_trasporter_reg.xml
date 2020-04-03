@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        tools:context=".TransporterRegFragment">
+        <EditText
+            android:id="@+id/txtusername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/txte_mail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txte_mail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtpass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtusername" />
+
+        <EditText
+            android:id="@+id/txtpass"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtconfirmpass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txte_mail" />
+
+        <EditText
+            android:id="@+id/txtconfirmpass"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="11dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/txtphone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtpass" />
+
+        <EditText
+            android:id="@+id/txtphone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="13dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            app:layout_constraintBottom_toTopOf="@+id/txvssn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtconfirmpass" />
+
+        <ImageView
+            android:id="@+id/front_ssn_imageID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="254dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/front_national_id"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/txv_vehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtusername"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/back_ssn_imageID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="53dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="54dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/back_national_id"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/front_driver_imageID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ssn_floating_layout"
+            app:layout_constraintVertical_bias="0.656" />
+
+        <TextView
+            android:id="@+id/txvssn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/styletext"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/add_your_national_id_photo"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ssn_floating_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtphone" />
+
+        <TextView
+            android:id="@+id/txv_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/styletext"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/add_your_driver_license_photo"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/driver_floating_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_ssn_floating_layout" />
+
+        <ImageView
+            android:id="@+id/front_driver_imageID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/front_driver_license"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/back_driver__imageID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txv_driver" />
+
+        <ImageView
+            android:id="@+id/back_driver__imageID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="68dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/back_driver_license"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/vehicle_floating_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txv_driver" />
+
+        <TextView
+            android:id="@+id/txv_vehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/styletext"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/add_vehicle_license_photo"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/vehicle_floating_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_driver_floating_layout" />
+
+        <ImageView
+            android:id="@+id/front_vehicle__imageID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/front_vehicle_license"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_driver__imageID" />
+
+        <ImageView
+            android:id="@+id/back_vehicle__imageID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/styletext"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="@string/back_vehicle_license"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vehicle_floating_layout" />
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout
+            android:id="@+id/ssn_floating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:gravity="bottom|end"
+            app:fabMenuStyle="popLeft"
+            app:fabSizes="mini"
+            app:layout_constraintEnd_toEndOf="@+id/back_ssn_floating_layout"
+            app:layout_constraintStart_toEndOf="@+id/front_ssn_imageID"
+            app:layout_constraintTop_toBottomOf="@+id/txvssn">
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_margin="5dp"
+                android:layout_marginStart="16dp"
+                app:fabIcon="@drawable/attach"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/ssn_front_gallery_id"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/gallery"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/ssn_front_camera_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/camera"
+                app:fabType="roundedSquare" />
+        </com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout>
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout
+            android:id="@+id/back_ssn_floating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:gravity="bottom|end"
+            app:fabMenuStyle="popLeft"
+            app:fabSizes="mini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back_ssn_imageID"
+            app:layout_constraintTop_toBottomOf="@+id/ssn_floating_layout">
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="16dp"
+                app:fabIcon="@drawable/attach"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/ssn_back_gallery_id"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/gallery"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/ssn_back_camera_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/camera"
+                app:fabType="roundedSquare" />
+        </com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout>
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout
+            android:id="@+id/driver_floating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:gravity="bottom|end"
+            app:fabMenuStyle="popLeft"
+            app:fabSizes="mini"
+            app:layout_constraintEnd_toEndOf="@+id/back_driver_floating_layout"
+            app:layout_constraintStart_toStartOf="@+id/back_driver_floating_layout"
+            app:layout_constraintTop_toBottomOf="@+id/txv_driver">
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="16dp"
+                app:fabIcon="@drawable/attach"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/driver_front_gallery_id"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/gallery"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/driver_front_camera_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/camera"
+                app:fabType="roundedSquare" />
+        </com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout>
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout
+            android:id="@+id/back_driver_floating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:gravity="bottom|end"
+            app:fabMenuStyle="popLeft"
+            app:fabSizes="mini"
+            app:layout_constraintBottom_toTopOf="@+id/txv_vehicle"
+            app:layout_constraintEnd_toEndOf="@+id/vehicle_floating_layout"
+            app:layout_constraintStart_toStartOf="@+id/vehicle_floating_layout"
+            app:layout_constraintTop_toBottomOf="@+id/driver_floating_layout" >
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="16dp"
+                app:fabIcon="@drawable/attach"
+                app:fabType="roundedSquare" />
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/driver_back_gallery_id"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/gallery"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/driver_back_camera_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/camera"
+                app:fabType="roundedSquare" />
+        </com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout>
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout
+            android:id="@+id/vehicle_floating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:gravity="bottom|end"
+            app:fabMenuStyle="popLeft"
+            app:fabSizes="mini"
+            app:layout_constraintBottom_toTopOf="@+id/back_vehicle__imageID"
+            app:layout_constraintEnd_toEndOf="@+id/back_floating_layout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/back_floating_layout"
+            app:layout_constraintTop_toBottomOf="@+id/txv_vehicle" >
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginStart="16dp"
+                app:fabIcon="@drawable/attach"
+                app:fabType="roundedSquare" />
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/vehicle_front_gallery_id"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/gallery"
+                app:fabType="roundedSquare" />
+
+
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/vehicle_front_camera_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/camera"
+                app:fabType="roundedSquare" />
+        </com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout>
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout
+            android:id="@+id/back_floating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:gravity="bottom|end"
+            app:fabMenuStyle="popLeft"
+            app:fabSizes="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vehicle_floating_layout">
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginLeft="16dp"
+                app:fabIcon="@drawable/attach"
+                app:fabType="roundedSquare" />
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/vehicle_back_galley_id"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/gallery"
+                app:fabType="roundedSquare" />
+
+            <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+                android:id="@+id/vehicle_back_camera_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:fabIcon="@drawable/camera"
+                app:fabType="roundedSquare" />
+        </com.robertlevonyan.views.customfloatingactionbutton.FloatingLayout>
+
+        <Button
+            android:id="@+id/signUpTransporterBtnID"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/stylebutton3"
+            android:text="@string/sign_up"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/back_floating_layout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

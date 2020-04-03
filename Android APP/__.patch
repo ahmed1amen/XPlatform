@@ -1,0 +1,766 @@
+Index: app/src/main/res/layout/fragment_trasporter_reg.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_trasporter_reg.xml	(revision 58599428e728698de524db15aa8ec7f2dc2d3ba8)
++++ app/src/main/res/layout/fragment_trasporter_reg.xml	(date 1585826964377)
+@@ -1,14 +1,343 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".TrasporterRegFragment">
++    xmlns:android="http://schemas.android.com/apk/res/android" >
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintHorizontal_bias="0.5"
++        app:layout_constraintTop_toTopOf="parent"
++        tools:context=".TrasporterRegFragment">
+ 
+-    <!-- TODO: Update blank fragment layout -->
+-    <TextView
+-        android:layout_width="match_parent"
+-        android:layout_height="match_parent"
+-        android:text="@string/hello_blank_fragment" />
++        <EditText
++            android:id="@+id/txtusername"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="18dp"
++            android:layout_marginEnd="10dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="User Name"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txte_mail"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="parent" />
++
++        <EditText
++            android:id="@+id/txte_mail"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginEnd="10dp"
++            android:layout_marginBottom="11dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="E_mail"
++            android:inputType="textEmailAddress"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txtpass"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtusername" />
++
++        <EditText
++            android:id="@+id/txtpass"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginEnd="10dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="Password"
++            android:inputType="textPassword"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txtconfirmpass"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txte_mail" />
++
++        <EditText
++            android:id="@+id/txtconfirmpass"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginEnd="10dp"
++            android:layout_marginBottom="11dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="Confirm Password"
++            android:inputType="textPassword"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txtphone"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtpass" />
++
++        <EditText
++            android:id="@+id/txtphone"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginEnd="10dp"
++            android:layout_marginBottom="13dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="phone"
++            android:inputType="phone"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txvssn"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtconfirmpass" />
++
++        <EditText
++            android:id="@+id/txtfront_ssn"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="254dp"
++            android:layout_marginEnd="50dp"
++            android:layout_marginBottom="254dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Front National ID"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="@+id/txv_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintHorizontal_bias="0.0"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtusername"
++            app:layout_constraintVertical_bias="0.0" />
++
++        <EditText
++            android:id="@+id/txtback_ssn"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="53dp"
++            android:layout_marginEnd="50dp"
++            android:layout_marginBottom="54dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Back National ID"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txt_front_driver"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintHorizontal_bias="0.0"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="@+id/btnfront_id"
++            app:layout_constraintVertical_bias="0.0" />
++
++        <TextView
++            android:id="@+id/txvssn"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="10dp"
++            android:layout_marginBottom="15dp"
++            android:background="@drawable/styletext"
++            android:paddingLeft="10dp"
++            android:paddingRight="10dp"
++            android:text="Add Your National ID Photo"
++            android:textColor="@android:color/black"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toTopOf="@+id/btnfront_id"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtphone" />
++
++        <TextView
++            android:id="@+id/txv_driver"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="10dp"
++            android:layout_marginBottom="15dp"
++            android:background="@drawable/styletext"
++            android:paddingLeft="10dp"
++            android:paddingRight="10dp"
++            android:text="Add Your Driver License Photo"
++            android:textColor="@android:color/black"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toTopOf="@+id/btnfront_driver"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btnback_id" />
++
++        <EditText
++            android:id="@+id/txt_front_driver"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="12dp"
++            android:layout_marginEnd="50dp"
++            android:layout_marginBottom="16dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Front Driver License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txt_back_driver"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txv_driver" />
++
++        <EditText
++            android:id="@+id/txt_back_driver"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="68dp"
++            android:layout_marginEnd="50dp"
++            android:layout_marginBottom="68dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Back Driver License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/btnfront_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txv_driver" />
++
++        <TextView
++            android:id="@+id/txv_vehicle"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="10dp"
++            android:layout_marginBottom="20dp"
++            android:background="@drawable/styletext"
++            android:paddingLeft="10dp"
++            android:paddingRight="10dp"
++            android:text="Add Vehicle License Photo"
++            android:textColor="@android:color/black"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toTopOf="@+id/btnfront_vehicle"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btnback_driver" />
++
++        <EditText
++            android:id="@+id/txt_front_vehicle"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="61dp"
++            android:layout_marginEnd="50dp"
++            android:layout_marginBottom="50dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Frront Vehicle License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txt_back_driver" />
++
++        <EditText
++            android:id="@+id/txt_back_vehicle"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="10dp"
++            android:layout_marginTop="10dp"
++            android:layout_marginEnd="50dp"
++            android:layout_marginBottom="5dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Back Vehicle License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintHorizontal_bias="0.0"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btnfront_vehicle" />
++
++        <ImageButton
++            android:id="@+id/btnfront_id"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginBottom="15dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/btnback_id"
++            app:layout_constraintEnd_toEndOf="@+id/btnback_id"
++            app:layout_constraintHorizontal_bias="0.0"
++            app:layout_constraintStart_toStartOf="@+id/btnback_id"
++            app:layout_constraintTop_toBottomOf="@+id/txvssn" />
++
++        <ImageButton
++            android:id="@+id/btnback_id"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginBottom="20dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/txv_driver"
++            app:layout_constraintEnd_toEndOf="@+id/btnfront_driver"
++            app:layout_constraintStart_toStartOf="@+id/btnfront_driver"
++            app:layout_constraintTop_toBottomOf="@+id/btnfront_id" />
++
++        <ImageButton
++            android:id="@+id/btnfront_driver"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginBottom="15dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/btnback_driver"
++            app:layout_constraintEnd_toEndOf="@+id/btnback_driver"
++            app:layout_constraintStart_toStartOf="@+id/btnback_driver"
++            app:layout_constraintTop_toBottomOf="@+id/txv_driver" />
++
++        <ImageButton
++            android:id="@+id/btnback_driver"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginBottom="27dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/txv_vehicle"
++            app:layout_constraintEnd_toEndOf="@+id/btnfront_vehicle"
++            app:layout_constraintStart_toStartOf="@+id/btnfront_vehicle"
++            app:layout_constraintTop_toBottomOf="@+id/btnfront_driver" />
++
++        <ImageButton
++            android:id="@+id/btnfront_vehicle"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginBottom="10dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/txt_back_vehicle"
++            app:layout_constraintEnd_toEndOf="@+id/btnback_vehicle"
++            app:layout_constraintHorizontal_bias="0.0"
++            app:layout_constraintStart_toStartOf="@+id/btnback_vehicle"
++            app:layout_constraintTop_toBottomOf="@+id/txv_vehicle" />
++
++        <ImageButton
++            android:id="@+id/btnback_vehicle"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="10dp"
++            android:layout_marginBottom="5dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent" />
++
++
++    </androidx.constraintlayout.widget.ConstraintLayout>
++
++</ScrollView>
+ 
+-</FrameLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout-land/fragment_trasporter_reg.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout-land/fragment_trasporter_reg.xml	(date 1585827044588)
++++ app/src/main/res/layout-land/fragment_trasporter_reg.xml	(date 1585827044588)
+@@ -0,0 +1,345 @@
++<?xml version="1.0" encoding="utf-8"?>
++<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    xmlns:android="http://schemas.android.com/apk/res/android" >
++
++    <androidx.constraintlayout.widget.ConstraintLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_marginLeft="10dp"
++        android:layout_marginRight="10dp"
++        tools:context=".TrasporterRegFragment">
++
++        <EditText
++            android:id="@+id/txtusername"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginTop="18dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="User Name"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txte_mail"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="parent" />
++
++        <EditText
++            android:id="@+id/txte_mail"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="E_mail"
++            android:inputType="textEmailAddress"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txtpass"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtusername" />
++
++        <EditText
++            android:id="@+id/txtpass"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="Password"
++            android:inputType="textPassword"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txtconfirmpass"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txte_mail" />
++
++        <EditText
++            android:id="@+id/txtconfirmpass"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="Confirm Password"
++            android:inputType="textPassword"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txtphone"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtpass" />
++
++        <EditText
++            android:id="@+id/txtphone"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="15dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:hint="phone"
++            android:inputType="phone"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txvssn"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtconfirmpass" />
++
++        <EditText
++            android:id="@+id/txtfront_ssn"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginTop="307dp"
++            android:layout_marginEnd="70dp"
++            android:layout_marginBottom="307dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Front National ID"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="@+id/txt_front_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="parent" />
++
++        <EditText
++            android:id="@+id/txtback_ssn"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="70dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Back National ID"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintVertical_bias="0.499" />
++
++        <TextView
++            android:id="@+id/txvssn"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="16dp"
++            android:layout_marginBottom="15dp"
++            android:background="@drawable/styletext"
++            android:paddingLeft="10dp"
++            android:paddingRight="10dp"
++            android:text="Add Your National ID Photo"
++            android:textColor="@android:color/black"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toTopOf="@+id/btn_front_ssn"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txtphone" />
++
++        <TextView
++            android:id="@+id/txv_driver"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="16dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:paddingLeft="10dp"
++            android:paddingRight="10dp"
++            android:text="Add Your Driver License Photo"
++            android:textColor="@android:color/black"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toTopOf="@+id/btn_front_driver"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btn_front_ssn" />
++
++        <EditText
++            android:id="@+id/txt_front_driver"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="24dp"
++            android:layout_marginTop="61dp"
++            android:layout_marginEnd="70dp"
++            android:layout_marginBottom="50dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Front Driver License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="@+id/txt_back_driver"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btn_back_ssn" />
++
++        <EditText
++            android:id="@+id/txt_back_driver"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="24dp"
++            android:layout_marginTop="51dp"
++            android:layout_marginEnd="70dp"
++            android:layout_marginBottom="50dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Back Driver License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txt_front_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toTopOf="@+id/btn_front_driver" />
++
++        <TextView
++            android:id="@+id/txv_vehicle"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginStart="16dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:paddingLeft="10dp"
++            android:paddingRight="10dp"
++            android:text="Add Vehicle License Photo"
++            android:textColor="@android:color/black"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toTopOf="@+id/btn_front_vehicle"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btn_back_driver" />
++
++        <EditText
++            android:id="@+id/txt_front_vehicle"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginTop="10dp"
++            android:layout_marginEnd="70dp"
++            android:layout_marginBottom="10dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Frront Vehicle License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toTopOf="@+id/txt_back_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txv_vehicle" />
++
++        <EditText
++            android:id="@+id/txt_back_vehicle"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="70dp"
++            android:layout_marginBottom="60dp"
++            android:background="@drawable/styletext"
++            android:ems="10"
++            android:enabled="false"
++            android:hint="Back Vehicle License"
++            android:inputType="textPersonName"
++            android:paddingLeft="10dp"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent" />
++
++        <Button
++            android:id="@+id/btntransregest"
++            android:layout_width="match_parent"
++            android:layout_height="40dp"
++            android:layout_marginStart="16dp"
++            android:layout_marginEnd="16dp"
++            android:background="@drawable/stylebutton3"
++            android:text="Register"
++            android:textColor="@android:color/white"
++            android:textSize="18sp"
++            android:textStyle="bold"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintStart_toStartOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btn_back_vehicle" />
++
++        <ImageButton
++            android:id="@+id/btn_front_ssn"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="85dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/txv_driver"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txvssn" />
++
++        <ImageButton
++            android:id="@+id/btn_back_ssn"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="16dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toTopOf="parent" />
++
++        <ImageButton
++            android:id="@+id/btn_front_driver"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="19dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/btn_back_driver"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txv_driver" />
++
++        <ImageButton
++            android:id="@+id/btn_back_driver"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="8dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/txv_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btn_front_driver" />
++
++        <ImageButton
++            android:id="@+id/btn_front_vehicle"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="27dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/btn_back_vehicle"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/txv_vehicle" />
++
++        <ImageButton
++            android:id="@+id/btn_back_vehicle"
++            android:layout_width="40dp"
++            android:layout_height="40dp"
++            android:layout_marginEnd="16dp"
++            android:layout_marginBottom="20dp"
++            android:src="@android:drawable/ic_menu_add"
++            app:layout_constraintBottom_toTopOf="@+id/btntransregest"
++            app:layout_constraintEnd_toEndOf="parent"
++            app:layout_constraintTop_toBottomOf="@+id/btn_front_vehicle" />
++
++    </androidx.constraintlayout.widget.ConstraintLayout>
++</ScrollView>
+\ No newline at end of file
+Index: app/src/main/java/com/tahhan/xprojectbeta/view/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/tahhan/xprojectbeta/view/MainActivity.java	(revision 58599428e728698de524db15aa8ec7f2dc2d3ba8)
++++ app/src/main/java/com/tahhan/xprojectbeta/view/MainActivity.java	(date 1585827172801)
+@@ -1,13 +1,12 @@
+ package com.tahhan.xprojectbeta.view;
+ 
++import android.os.Bundle;
++
+ import androidx.appcompat.app.AppCompatActivity;
+ import androidx.fragment.app.FragmentManager;
+ 
+-import android.os.Bundle;
+-import android.util.Log;
+-import android.widget.Toast;
+-
+ import com.tahhan.xprojectbeta.R;
++import com.tahhan.xprojectbeta.TrasporterRegFragment;
+ import com.tahhan.xprojectbeta.view.ui.login.LoginFragment;
+ import com.tahhan.xprojectbeta.view.ui.login.RegisterFragment;
+ 
+@@ -18,6 +17,7 @@
+     private LoginFragment loginFragment;
+     private RegisterFragment registerFragment;
+     private FragmentManager fm;
++    private TrasporterRegFragment tf;
+ 
+ 
+     @Override
+@@ -47,11 +47,17 @@
+                 .commit();
+     }
+ 
+-    @Override
+     public void onBackPressed() {
+         if (loginFragment.isVisible()) {
+             finish();
+         } else super.onBackPressed();
+ 
++      /*  TrasporterRegFragment transporterReg = new TrasporterRegFragment();
++
++        fm.beginTransaction().replace(R.id.fragment_container,transporterReg).commit();
++*/
+     }
++
++
++
+ }
+\ No newline at end of file
